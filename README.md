@@ -34,5 +34,3 @@ source llm-testing-venv/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
-python main.py
-```
