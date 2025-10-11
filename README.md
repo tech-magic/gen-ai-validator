@@ -4,7 +4,16 @@ Explaining how to validate the quality of an AI generated output quantitatively.
 ## Pre-requisites
 - Install Python3
 - Ensure that you have an AWS account and valid AWS credentials.
-- Configure your AWS credentials to your default AWS profile using `aws configure` command inside the $HOME/.aws folder.
+- Configure your AWS credentials to your default AWS profile using `aws configure` command inside the `$HOME/.aws` folder.
+
+## How to Run
+
+```
+python3 -m venv llm-testing-venv
+source llm-testing-venv/bin/activate
+pip install -r requirements.txt
+python main.py
+```
 
 ## Notes
 AWS is not a mandatory requirement to run `deepeval` test cases.
@@ -24,13 +33,3 @@ The available options for choosing a `JudgeLLM` (as per the above link) includes
 - and more...
 
 Also you can write your own custom `JudgeLLM`by extending from `deepeval.models.DeepEvalBaseModel` class.
-
-
-# how to run
-
-```
-python3 -m venv llm-testing-venv
-source llm-testing-venv/bin/activate
-pip install -r requirements.txt
-python main.py
-```
