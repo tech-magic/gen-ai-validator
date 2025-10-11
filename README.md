@@ -1,4 +1,4 @@
-# AI Output Validation
+# GenAI Output Validation
 
 ## Concept
 
