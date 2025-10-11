@@ -1,13 +1,18 @@
-# Concept: AI Output Validation
+# AI Output Validation
 
-Validating AI output means measuring how accurate, relevant, or reliable a generated response is compared to a reference or ideal behavior.
+## Concept
 
-Using a JudgeLLM allows you to automate this evaluation.
+Suppose you've built your own custom LLM (for privacy or confidentiality reasons), or you want to evaluate a new LLM of interest against a mature LLM such as **ChatGPT**, **Gemini**, **LLaMA**, etc.
 
-Quantitative validation often involves:
-- Scoring outputs using metrics.
+**Validating AI output** means measuring how accurate, relevant, or reliable an AI-generated response is for a given input prompt (from your LLM of interest), compared to a reference or ideal answer.
+
+Using a `JudgeLLM` — a mature LLM that is widely accepted, such as ChatGPT, Gemini, LLaMA, etc. — allows you to automate this evaluation.
+
+**Quantitative validation** often involves:
 - Comparing against reference answers.
+- Scoring AI-generated outputs quantitatively based on criteria enforced by a given quality metric.
 - Aggregating results to produce a final quality score.
+- Providing justified reasoning for the evaluation results.
 
 ## Pre-requisites
 - Install Python3
