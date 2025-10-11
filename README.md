@@ -1,5 +1,13 @@
-# AI-Validator
-Explaining how to validate the quality of an AI generated output quantitatively.
+# Concept: AI Output Validation
+
+Validating AI output means measuring how accurate, relevant, or reliable a generated response is compared to a reference or ideal behavior.
+
+Using a JudgeLLM allows you to automate this evaluation.
+
+Quantitative validation often involves:
+- Scoring outputs using metrics.
+- Comparing against reference answers.
+- Aggregating results to produce a final quality score.
 
 ## Pre-requisites
 - Install Python3
