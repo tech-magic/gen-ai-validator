@@ -13,5 +13,250 @@
         "input_prompt": "What is 2 + 2?",
         "expected_answer": "4",
         "ai_generated_answer": "4"
+    },
+    {
+        "input_prompt": "Who painted the Mona Lisa?",
+        "expected_answer": "Leonardo da Vinci painted the Mona Lisa.",
+        "ai_generated_answer": "Leonardo da Vinci."
+    },
+    {
+        "input_prompt": "What is the largest planet in our solar system?",
+        "expected_answer": "Jupiter is the largest planet in our solar system.",
+        "ai_generated_answer": "Jupiter"
+    },
+    {
+        "input_prompt": "Who discovered gravity?",
+        "expected_answer": "Sir Isaac Newton discovered gravity.",
+        "ai_generated_answer": "Isaac Newton."
+    },
+    {
+        "input_prompt": "Translate 'Good morning' to Spanish.",
+        "expected_answer": "Buenos días.",
+        "ai_generated_answer": "Buenos días"
+    },
+    {
+        "input_prompt": "What is the square root of 144?",
+        "expected_answer": "The square root of 144 is 12.",
+        "ai_generated_answer": "12"
+    },
+    {
+        "input_prompt": "Who was the first person to walk on the Moon?",
+        "expected_answer": "Neil Armstrong was the first person to walk on the Moon.",
+        "ai_generated_answer": "Neil Armstrong."
+    },
+    {
+        "input_prompt": "Summarize: 'Artificial intelligence enables machines to perform tasks that require human intelligence.'",
+        "expected_answer": "AI allows machines to mimic human intelligence.",
+        "ai_generated_answer": "AI lets machines act intelligently like humans."
+    },
+    {
+        "input_prompt": "What year did World War II end?",
+        "expected_answer": "World War II ended in 1945.",
+        "ai_generated_answer": "1945"
+    },
+    {
+        "input_prompt": "What is the chemical symbol for water?",
+        "expected_answer": "The chemical symbol for water is H₂O.",
+        "ai_generated_answer": "H2O"
+    },
+    {
+        "input_prompt": "What is the tallest mountain in the world?",
+        "expected_answer": "Mount Everest is the tallest mountain in the world.",
+        "ai_generated_answer": "Mount Everest."
+    },
+    {
+        "input_prompt": "Who developed the theory of relativity?",
+        "expected_answer": "Albert Einstein developed the theory of relativity.",
+        "ai_generated_answer": "Albert Einstein."
+    },
+    {
+        "input_prompt": "Explain photosynthesis in one sentence.",
+        "expected_answer": "Photosynthesis is the process by which plants convert sunlight into chemical energy.",
+        "ai_generated_answer": "Plants use sunlight to create energy through photosynthesis."
+    },
+    {
+        "input_prompt": "What is the boiling point of water in Celsius?",
+        "expected_answer": "Water boils at 100 degrees Celsius.",
+        "ai_generated_answer": "100°C"
+    },
+    {
+        "input_prompt": "Who is the CEO of Tesla as of 2025?",
+        "expected_answer": "Elon Musk is the CEO of Tesla as of 2025.",
+        "ai_generated_answer": "Elon Musk."
+    },
+    {
+        "input_prompt": "Which continent is Australia located on?",
+        "expected_answer": "Australia is located on the continent of Australia.",
+        "ai_generated_answer": "Australia"
+    },
+    {
+        "input_prompt": "What is the main ingredient in guacamole?",
+        "expected_answer": "The main ingredient in guacamole is avocado.",
+        "ai_generated_answer": "Avocado."
+    },
+    {
+        "input_prompt": "Translate 'I love programming' to French.",
+        "expected_answer": "J'aime programmer.",
+        "ai_generated_answer": "J’aime programmer"
+    },
+    {
+        "input_prompt": "What gas do humans exhale during respiration?",
+        "expected_answer": "Humans exhale carbon dioxide during respiration.",
+        "ai_generated_answer": "Carbon dioxide."
+    },
+    {
+        "input_prompt": "Name a primary color.",
+        "expected_answer": "Red, blue, or yellow are primary colors.",
+        "ai_generated_answer": "Red."
+    },
+    {
+        "input_prompt": "What is 10 multiplied by 12?",
+        "expected_answer": "120",
+        "ai_generated_answer": "120"
+    },
+    {
+        "input_prompt": "What programming language is primarily used for data science?",
+        "expected_answer": "Python is primarily used for data science.",
+        "ai_generated_answer": "Python."
+    },
+    {
+        "input_prompt": "Who invented the telephone?",
+        "expected_answer": "Alexander Graham Bell invented the telephone.",
+        "ai_generated_answer": "Alexander Graham Bell."
+    },
+    {
+        "input_prompt": "What is the freezing point of water in Fahrenheit?",
+        "expected_answer": "The freezing point of water is 32°F.",
+        "ai_generated_answer": "32°F"
+    },
+    {
+        "input_prompt": "Who wrote the play 'Romeo and Juliet'?",
+        "expected_answer": "William Shakespeare wrote 'Romeo and Juliet'.",
+        "ai_generated_answer": "William Shakespeare."
+    },
+    {
+        "input_prompt": "Summarize: 'The mitochondria are the powerhouses of the cell.'",
+        "expected_answer": "Mitochondria generate energy for cells.",
+        "ai_generated_answer": "They produce energy for the cell."
+    },
+    {
+        "input_prompt": "What is the opposite of 'hot'?",
+        "expected_answer": "The opposite of 'hot' is 'cold'.",
+        "ai_generated_answer": "Cold."
+    },
+    {
+        "input_prompt": "Translate 'Thank you very much' to German.",
+        "expected_answer": "Vielen Dank.",
+        "ai_generated_answer": "Danke schön."
+    },
+    {
+        "input_prompt": "What planet is known as the Red Planet?",
+        "expected_answer": "Mars is known as the Red Planet.",
+        "ai_generated_answer": "Mars."
+    },
+    {
+        "input_prompt": "Who was the first President of the United States?",
+        "expected_answer": "George Washington was the first President of the United States.",
+        "ai_generated_answer": "George Washington."
+    },
+    {
+        "input_prompt": "What is the speed of light in vacuum (approximate value)?",
+        "expected_answer": "The speed of light is approximately 299,792 kilometers per second.",
+        "ai_generated_answer": "About 300,000 km/s."
+    },
+    {
+        "input_prompt": "Explain Newton’s first law of motion.",
+        "expected_answer": "An object remains at rest or in uniform motion unless acted upon by an external force.",
+        "ai_generated_answer": "Objects stay still or keep moving unless a force changes that."
+    },
+    {
+        "input_prompt": "What is 25% of 200?",
+        "expected_answer": "25% of 200 is 50.",
+        "ai_generated_answer": "50"
+    },
+    {
+        "input_prompt": "What does HTTP stand for?",
+        "expected_answer": "HTTP stands for HyperText Transfer Protocol.",
+        "ai_generated_answer": "HyperText Transfer Protocol."
+    },
+    {
+        "input_prompt": "Who painted The Starry Night?",
+        "expected_answer": "Vincent van Gogh painted The Starry Night.",
+        "ai_generated_answer": "Vincent van Gogh."
+    },
+    {
+        "input_prompt": "What is the main function of the heart?",
+        "expected_answer": "The heart pumps blood throughout the body.",
+        "ai_generated_answer": "It pumps blood around the body."
+    },
+    {
+        "input_prompt": "What is 9 squared?",
+        "expected_answer": "81",
+        "ai_generated_answer": "81"
+    },
+    {
+        "input_prompt": "Translate 'How are you?' to Japanese.",
+        "expected_answer": "お元気ですか？ (Ogenki desu ka?)",
+        "ai_generated_answer": "Ogenki desu ka?"
+    },
+    {
+        "input_prompt": "What is the smallest prime number?",
+        "expected_answer": "The smallest prime number is 2.",
+        "ai_generated_answer": "2"
+    },
+    {
+        "input_prompt": "Who is known as the Father of Computers?",
+        "expected_answer": "Charles Babbage is known as the Father of Computers.",
+        "ai_generated_answer": "Charles Babbage."
+    },
+    {
+        "input_prompt": "Summarize the plot of 'The Lion King' in one sentence.",
+        "expected_answer": "A young lion named Simba overcomes adversity to reclaim his rightful place as king.",
+        "ai_generated_answer": "Simba learns to be king after his father's death."
+    },
+    {
+        "input_prompt": "What is the main purpose of DNA?",
+        "expected_answer": "DNA stores genetic information used for growth, development, and reproduction.",
+        "ai_generated_answer": "It carries genetic information."
+    },
+    {
+        "input_prompt": "What is the capital city of Japan?",
+        "expected_answer": "The capital city of Japan is Tokyo.",
+        "ai_generated_answer": "Tokyo."
+    },
+    {
+        "input_prompt": "Who composed the Fifth Symphony?",
+        "expected_answer": "Ludwig van Beethoven composed the Fifth Symphony.",
+        "ai_generated_answer": "Beethoven."
+    },
+    {
+        "input_prompt": "What is the chemical symbol for gold?",
+        "expected_answer": "The chemical symbol for gold is Au.",
+        "ai_generated_answer": "Au"
+    },
+    {
+        "input_prompt": "Which planet has the most moons?",
+        "expected_answer": "Saturn has the most moons in our solar system.",
+        "ai_generated_answer": "Saturn."
+    },
+    {
+        "input_prompt": "What is the opposite of 'increase'?",
+        "expected_answer": "The opposite of 'increase' is 'decrease'.",
+        "ai_generated_answer": "Decrease."
+    },
+    {
+        "input_prompt": "Explain what machine learning is.",
+        "expected_answer": "Machine learning is a branch of AI where computers learn patterns from data to make predictions or decisions.",
+        "ai_generated_answer": "It’s when computers learn from data to make predictions."
+    },
+    {
+        "input_prompt": "What language is primarily spoken in Brazil?",
+        "expected_answer": "Portuguese is the primary language spoken in Brazil.",
+        "ai_generated_answer": "Portuguese."
+    },
+    {
+        "input_prompt": "What is the value of pi (approximate)?",
+        "expected_answer": "Pi is approximately 3.14159.",
+        "ai_generated_answer": "3.14"
     }
 ]

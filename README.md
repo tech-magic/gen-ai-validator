@@ -8,9 +8,8 @@ You've built/evaluating your **own custom LLM** (due to data privacy or confiden
 
 Using a `JudgeLLM` (a **mature LLM** that is widely accepted, such as ChatGPT, Gemini, LLaMA, etc.) allows you to automate this evaluation.
 
----
 
-### 📊 About Quantitative Validation
+#### 📊 About Quantitative Validation
 
 **Quantitative validation** includes:
 - 🔍 **Comparison** against a reference or ground-truth answer.  

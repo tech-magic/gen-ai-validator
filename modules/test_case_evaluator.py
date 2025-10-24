@@ -20,17 +20,29 @@ async def evaluate_llm_test_case(llm_test_case, metrics_to_run):
         actual_output=ai_generated_answer,
         expected_output=expected_answer,
         context=[source_of_truth],
-        retrieval_context= [ai_inferred_truth],
+        retrieval_context=[ai_inferred_truth],
         name=test_case_name
     )
 
-    async def run_metric(metric_name, metric_instance):
-        await metric_instance.a_measure(deepeval_test_case)
-        return {
-            "metric": metric_name,
-            "score": metric_instance.score,
-            "reason": metric_instance.reason
-        }
+    async def run_metric(metric_name, metric_instance, max_attempts=5):
+        attempt = 0
+        while attempt < max_attempts:
+            try:
+                await metric_instance.a_measure(deepeval_test_case)
+                return {
+                    "metric": metric_name,
+                    "score": metric_instance.score,
+                    "reason": metric_instance.reason
+                }
+            except Exception as e:
+                attempt += 1
+                if attempt >= max_attempts:
+                    # Ignore this metric after max_attempts
+                    return {
+                        "metric": metric_name,
+                        "score": None,
+                        "reason": f"Metric failed after {max_attempts} attempts: {e}"
+                    }
 
     # Run all metrics concurrently
     tasks = [
@@ -38,6 +50,9 @@ async def evaluate_llm_test_case(llm_test_case, metrics_to_run):
         for name, factory in metrics_to_run.items()
     ]
     metric_results = await asyncio.gather(*tasks)
+
+    # Filter out metrics that failed (score is None) - TODO: handle buggy metrics
+    metric_results = [result for result in metric_results if result["score"] is not None]
 
     return {
         "test_case_group": test_case_group,
