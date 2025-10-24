@@ -1,18 +1,18 @@
 # 🤖 GenAI Output Validation
 
-### 💡 Concept
+### 💡 Problem
 
-Suppose you've built your own custom LLM (for privacy or confidentiality reasons), or you want to evaluate a new LLM of interest against a mature LLM such as **ChatGPT**, **Gemini**, **LLaMA**, etc.
+You've built/evaluating your **own custom LLM** (due to data privacy or confidentiality reasons), or you want to evaluate the performance of a new **LLM of your interest** against a **mature LLM** such as **ChatGPT**, **Gemini**, **LLaMA**, etc.
 
-**Validating AI output** means measuring how accurate, relevant, or reliable an AI-generated response is for a given input prompt (from your LLM of interest), compared to a reference or ideal answer.
+**Validating AI output** means measuring how accurate, relevant, or reliable an **AI-generated response** is for a given input prompt (from your LLM of interest), compared to a reference or ideal answer.
 
-Using a `JudgeLLM` — a mature LLM that is widely accepted, such as ChatGPT, Gemini, LLaMA, etc. — allows you to automate this evaluation.
+Using a `JudgeLLM` (a **mature LLM** that is widely accepted, such as ChatGPT, Gemini, LLaMA, etc.) allows you to automate this evaluation.
 
 ---
 
-### 📊 Quantitative Validation
+### 📊 About Quantitative Validation
 
-**Quantitative validation** typically includes:
+**Quantitative validation** includes:
 - 🔍 **Comparison** against a reference or ground-truth answer.  
 - 🧮 **Scoring** AI-generated outputs based on measurable quality metrics.  
 - 📈 **Aggregation** of scores to produce an overall performance rating.  
