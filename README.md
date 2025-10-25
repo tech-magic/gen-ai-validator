@@ -84,6 +84,80 @@ flowchart TD
 
 ---
 
+## 📦 Installation Guide
+
+#### 🖥️ Test Environment
+
+This program was tested using Python 3.10.16 on an Apple M1 Mac running macOS Ventura 13.7.1.
+
+```bash
+python3 --version
+# Python 3.10.16
+
+pip3 --version
+# pip 23.0.1 from /Users/{your_username}/.pyenv/versions/3.10.16/lib/python3.10/site-packages/pip (python 3.10)
+
+uname -a
+# Darwin {your_machine_name} 22.6.0 Darwin Kernel Version 22.6.0: Thu Sep  5 20:47:01 PDT 2024; root:xnu-8796.141.3.708.1~1/RELEASE_ARM64_T6000 arm64
+
+sw_vers
+# ProductName:            macOS
+# ProductVersion:         13.7.1
+# BuildVersion:           22H221
+
+uname -m
+# arm64
+
+sysctl -n machdep.cpu.brand_string
+# Apple M1 Max
+```
+
+#### 🧩 Pre-requisites
+- 🐍 Install **Python3**  
+- ☁️ Ensure you have an **AWS account** and valid **AWS credentials** 🔑  
+- ⚙️ Configure your `AWS credentials` to your default AWS profile using `aws configure` command inside the `$HOME/.aws` folder 📂.
+
+#### 🚀 How to Run
+
+```bash
+# Clone this repository
+git clone https://github.com/tech-magic/gen-ai-validator.git
+cd gen-ai-validator
+
+# Create your own python virtual environment
+python3 -m venv llm-testing-venv
+source llm-testing-venv/bin/activate
+
+# Install all requirements into the python virtual environment
+pip install -r requirements.txt
+
+# Run the app from the python virtual environment
+python main.py
+```
+
+#### 📝 Notes
+🧠 AWS is not a mandatory requirement to run `deepeval` test cases.
+It is ONLY listed as a pre-requisite here since `Amazon-Nova-Pro` is being used as the `JudgeLLM` for this demo (see `modules/judge_llm.py`)
+
+
+You can choose **any trusted LLM** 🤖 as your `JudgeLLM` from the following list in the `deepeval` library:
+```
+https://github.com/confident-ai/deepeval/tree/main/deepeval/models/llms
+```
+🧠 The available options for choosing a `JudgeLLM` (as per the above link) includes:
+- 💬 OpenAI
+- 🔍 Deepseek
+- 🌐 Gemini
+- ☁️ AWS
+- 🔷 Azure
+- 🧠 Ollama
+- ➕ and more...
+
+💡 You can even **create your own custom** `JudgeLLM` 🧩 by extending the class: 
+`deepeval.models.DeepEvalBaseModel` 🧱
+
+---
+
 ### 🧩 LLM Test Case Structure
 
 Each test case contains the following fields:
@@ -146,39 +220,3 @@ Each metric includes a **💬 Reason** to explain the score — showing what the
 - **📊 Scoring:** `0.0 – 1.0`  
 - **🧠 Reason:** Indicates whether key points were retained ✨ or lost, and if the summary is concise and coherent 💬.
 
----
-
-## 🧩 Pre-requisites
-- 🐍 Install **Python3**  
-- ☁️ Ensure you have an **AWS account** and valid **AWS credentials** 🔑  
-- ⚙️ Configure your `AWS credentials` to your default AWS profile using `aws configure` command inside the `$HOME/.aws` folder 📂.
-
-## 🚀 How to Run
-
-```
-python3 -m venv llm-testing-venv
-source llm-testing-venv/bin/activate
-pip install -r requirements.txt
-python main.py
-```
-
-## 📝 Notes
-🧠 AWS is not a mandatory requirement to run `deepeval` test cases.
-It is ONLY listed as a pre-requisite here since `Amazon-Nova-Pro` is being used as the `JudgeLLM` for this demo (see `modules/judge_llm.py`)
-
-
-You can choose **any trusted LLM** 🤖 as your `JudgeLLM` from the following list in the `deepeval` library:
-```
-https://github.com/confident-ai/deepeval/tree/main/deepeval/models/llms
-```
-🧠 The available options for choosing a `JudgeLLM` (as per the above link) includes:
-- 💬 OpenAI
-- 🔍 Deepseek
-- 🌐 Gemini
-- ☁️ AWS
-- 🔷 Azure
-- 🧠 Ollama
-- ➕ and more...
-
-💡 You can even **create your own custom** `JudgeLLM` 🧩 by extending the class: 
-`deepeval.models.DeepEvalBaseModel` 🧱

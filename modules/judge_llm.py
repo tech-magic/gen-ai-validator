@@ -19,7 +19,9 @@ from deepeval.models.llms import AmazonBedrockModel
 # Also you can write your own custom `JudgeLLM`by extending from `deepeval.models.DeepEvalBaseModel` class.
 
 def get_judge_llm():
-    return AmazonBedrockModel(
+    judge_llm = AmazonBedrockModel(
         model_id="amazon.nova-pro-v1:0",
         region_name="us-east-1"
     )
+    print(f"Loading JudgeLLM -> {vars(judge_llm)}")
+    return judge_llm

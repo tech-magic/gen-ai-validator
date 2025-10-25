@@ -1,4 +1,4 @@
-# pip install deepeval boto3 langchain_aws aioboto3 asyncio
+# pip install deepeval boto3 langchain_aws aioboto3 asyncio pandas altair
 
 import asyncio
 
