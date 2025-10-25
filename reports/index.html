@@ -1,0 +1,3223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧭 GenAI Test Reports Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<style>
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background-color: #fafafa;
+    margin: 0; padding: 0;
+}
+header {
+    background: linear-gradient(135deg, #0078D7, #00B7C3);
+    color: white; text-align: center;
+    padding: 1rem 0; font-size: 1.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+main {
+    display: flex; flex-direction: column;
+    gap: 1rem; padding: 20px;
+    max-width: 1000px; margin: auto;
+}
+details {
+    background: white; border-radius: 8px;
+    padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+summary {
+    cursor: pointer; font-size: 1.2rem; font-weight: 600;
+}
+pre {
+    background: #f4f4f4; padding: 10px;
+    border-radius: 5px; overflow-x: auto;
+}
+</style>
+</head>
+<body>
+
+<header>📊 GenAI Test Report Dashboard</header>
+
+<main>
+
+<!-- Collapsible aggregated section -->
+<details open>
+  <summary>📈 <b>Aggregated Metric Distribution</b></summary>
+  <div class="chart-container" style="margin-top:1rem;">
+    <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-ceb8b34a7c479b5ff975334064ed924c"}, "mark": {"type": "boxplot", "extent": "min-max", "size": 30}, "encoding": {"color": {"field": "Metric", "legend": null, "type": "nominal"}, "x": {"field": "Score", "scale": {"domain": [-0.2, 1.2]}, "title": "Score", "type": "quantitative"}, "y": {"field": "Metric", "sort": "-x", "title": "Metric Name", "type": "nominal"}}, "height": 400, "title": "\ud83d\udcca Distribution of Metric Scores Across All Test Cases", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-ceb8b34a7c479b5ff975334064ed924c": [{"Test Case": 1, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 1, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 1, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 1, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 1, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 2, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 2, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 2, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 2, "Metric": "ContextualRelevancy", "Score": 0.5}, {"Test Case": 2, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 3, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 3, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 3, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 3, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 3, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 4, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 4, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 4, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 4, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 4, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 5, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 5, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 5, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 5, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 5, "Metric": "ContextualRelevancy", "Score": 0.5}, {"Test Case": 5, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 6, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 6, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 6, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 6, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 6, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 7, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 7, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 7, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 7, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 7, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 8, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 8, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 8, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 8, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 8, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 9, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 9, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 9, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 9, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 9, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 10, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 10, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 10, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 10, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 11, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 11, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 11, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 11, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 11, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 12, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 12, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 12, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 12, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 12, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 12, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 13, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 13, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 13, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 13, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 13, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 14, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 14, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 14, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 14, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 14, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 15, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 15, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 15, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 15, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 15, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 15, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 16, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 16, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 16, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 16, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 16, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 17, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 17, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 17, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 17, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 18, "Metric": "AnswerRelevancy", "Score": 0.0}, {"Test Case": 18, "Metric": "ContextualPrecision", "Score": 0.0}, {"Test Case": 18, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 18, "Metric": "ContextualRelevancy", "Score": 0.0}, {"Test Case": 18, "Metric": "Hallucination", "Score": 1.0}, {"Test Case": 19, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 19, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 19, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 19, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 20, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 20, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 20, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 20, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 20, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 20, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 21, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 21, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 21, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 21, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 21, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 22, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 22, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 22, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 22, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 22, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 23, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 23, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 23, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 23, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 23, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 24, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 24, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 24, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 24, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 24, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 25, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 25, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 25, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 25, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 25, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 26, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 26, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 26, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 26, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 26, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 26, "Metric": "Summarization", "Score": 1.0}, {"Test Case": 27, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 27, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 27, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 27, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 27, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 28, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 28, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 28, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 28, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 29, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 29, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 29, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 29, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 30, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 30, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 30, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 30, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 31, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 31, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 31, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 31, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 31, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 32, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 32, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 32, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 32, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 32, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 32, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 33, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 33, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 33, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 33, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 33, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 34, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 34, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 34, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 34, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 34, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 35, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 35, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 35, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 35, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 35, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 36, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 36, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 36, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 36, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 36, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 37, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 37, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 37, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 37, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 37, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 37, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 38, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 38, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 38, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 38, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 39, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 39, "Metric": "Faithfulness", "Score": 0.0}, {"Test Case": 39, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 39, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 39, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 39, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 40, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 40, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 40, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 40, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 40, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 41, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 41, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 42, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 42, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 42, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 42, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 43, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 43, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 43, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 44, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 44, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 44, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 45, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 45, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 46, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 46, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 46, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 46, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 46, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 47, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 47, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 47, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 47, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 47, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 48, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 48, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 48, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 48, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 48, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 49, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 49, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 49, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 49, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 50, "Metric": "Faithfulness", "Score": 1.0}, {"Test Case": 51, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 51, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 51, "Metric": "Hallucination", "Score": 0.0}, {"Test Case": 52, "Metric": "AnswerRelevancy", "Score": 1.0}, {"Test Case": 52, "Metric": "ContextualPrecision", "Score": 1.0}, {"Test Case": 52, "Metric": "ContextualRecall", "Score": 1.0}, {"Test Case": 52, "Metric": "ContextualRelevancy", "Score": 1.0}, {"Test Case": 52, "Metric": "Hallucination", "Score": 0.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
+  </div>
+</details>
+
+<!-- Collapsible test reports -->
+<details open>
+  <summary>🔍 <b>Individual Test Reports</b></summary>
+  <div style="margin-top:1rem;">
+    
+<details>
+  <summary>🧪 <b>Test Case 1</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 1
+
+##### 🧾 Input Prompt
+```text
+Who wrote the book 1984?
+```
+##### ✅ Expected Answer
+```text
+George Orwell wrote the novel 1984.
+```
+##### 🤖 AI-generated Answer
+```text
+George Orwell wrote it.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who wrote the book 1984?
+
+---
+
+# Expected Answer:
+George Orwell wrote the novel 1984.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who wrote the book 1984?
+
+---
+
+# AI-generated Answer:
+George Orwell wrote it.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly identified George Orwell as the author of the book &#x27;1984&#x27;, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly answers the question by stating &#x27;George Orwell wrote it.&#x27;, is ranked highest, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output sentence is perfectly supported by the 1st node in the retrieval context, which states &#x27;George Orwell wrote it.&#x27; Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately states &#x27;George Orwell wrote it.&#x27;, perfectly matching the input query about the author of the book 1984.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 2</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 2
+
+##### 🧾 Input Prompt
+```text
+What is the capital of France?
+```
+##### ✅ Expected Answer
+```text
+The capital of France is Paris.
+```
+##### 🤖 AI-generated Answer
+```text
+Paris
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the capital of France?
+
+---
+
+# Expected Answer:
+The capital of France is Paris.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the capital of France?
+
+---
+
+# AI-generated Answer:
+Paris
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly addressed the query about the capital of France without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Paris&#x27; as the answer to the question &#x27;What is the capital of France?&#x27;, is the most relevant and precise response to the input query.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;The capital of France is Paris.&#x27; is perfectly supported by the 1st node in the retrieval context, which confirms Paris as the capital of France.
+
+##### ContextualRelevancy
+- **Score:** 0.50
+- **Reason:** The score is 0.50 because, although the retrieval context correctly identifies &#x27;Paris&#x27; as the capital of France, the context is deemed irrelevant due to the input being a question rather than a statement. However, the presence of the correct answer &#x27;Paris&#x27; in the context partially redeems its relevance, hence the mid-score.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Paris&#x27; perfectly aligns with the provided context stating that the capital of France is Paris, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 3</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 3
+
+##### 🧾 Input Prompt
+```text
+What is 2 + 2?
+```
+##### ✅ Expected Answer
+```text
+4
+```
+##### 🤖 AI-generated Answer
+```text
+4
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is 2 + 2?
+
+---
+
+# Expected Answer:
+4
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is 2 + 2?
+
+---
+
+# AI-generated Answer:
+4
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the answer provided a direct and accurate response to the input question with no irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because all relevant nodes, like the first node which directly states &#x27;4&#x27;, are ranked highest with no irrelevant nodes present. Perfect alignment!
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output &#x27;4&#x27; is perfectly supported by the retrieval context, with no unsupportive reasons present. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the answer &#x27;4&#x27; to the question &#x27;What is 2 + 2?&#x27;, demonstrating perfect relevance and precision.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 4</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 4
+
+##### 🧾 Input Prompt
+```text
+Who painted the Mona Lisa?
+```
+##### ✅ Expected Answer
+```text
+Leonardo da Vinci painted the Mona Lisa.
+```
+##### 🤖 AI-generated Answer
+```text
+Leonardo da Vinci.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who painted the Mona Lisa?
+
+---
+
+# Expected Answer:
+Leonardo da Vinci painted the Mona Lisa.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who painted the Mona Lisa?
+
+---
+
+# AI-generated Answer:
+Leonardo da Vinci.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely identifies Leonardo da Vinci as the painter of the Mona Lisa, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Leonardo da Vinci&#x27; as the painter of the Mona Lisa, is perfectly relevant and ranked highest, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;Leonardo da Vinci painted the Mona Lisa.&#x27; is perfectly supported by the 1st node in the retrieval context, which mentions &#x27;Leonardo da Vinci.&#x27; Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately states &#x27;Leonardo da Vinci painted the Mona Lisa,&#x27; perfectly matching the input query. Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 5</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 5
+
+##### 🧾 Input Prompt
+```text
+What is the largest planet in our solar system?
+```
+##### ✅ Expected Answer
+```text
+Jupiter is the largest planet in our solar system.
+```
+##### 🤖 AI-generated Answer
+```text
+Jupiter
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the largest planet in our solar system?
+
+---
+
+# Expected Answer:
+Jupiter is the largest planet in our solar system.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the largest planet in our solar system?
+
+---
+
+# AI-generated Answer:
+Jupiter
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely identified Jupiter as the largest planet in our solar system, with no irrelevant information included.
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showcasing excellent faithfulness and accuracy.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Jupiter&#x27; as the answer, is both relevant and correct, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, providing a precise and accurate response to the input query.
+
+##### ContextualRelevancy
+- **Score:** 0.50
+- **Reason:** The score is 0.50 because, although the retrieval context correctly identifies &#x27;Jupiter&#x27; as the largest planet in our solar system, it lacks additional relevant information to fully address the input question, hence the middling score.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Jupiter&#x27; aligns with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 6</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 6
+
+##### 🧾 Input Prompt
+```text
+Who discovered gravity?
+```
+##### ✅ Expected Answer
+```text
+Sir Isaac Newton discovered gravity.
+```
+##### 🤖 AI-generated Answer
+```text
+Isaac Newton.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who discovered gravity?
+
+---
+
+# Expected Answer:
+Sir Isaac Newton discovered gravity.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who discovered gravity?
+
+---
+
+# AI-generated Answer:
+Isaac Newton.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the question about the discovery of gravity without any irrelevant information.
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Isaac Newton&#x27;, is the correct and relevant answer to the question &#x27;Who discovered gravity?&#x27; and is ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;Sir Isaac Newton discovered gravity.&#x27; is perfectly supported by the 1st node in the retrieval context, which mentions &#x27;Isaac Newton.&#x27; Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 7</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 7
+
+##### 🧾 Input Prompt
+```text
+Translate &#x27;Good morning&#x27; to Spanish.
+```
+##### ✅ Expected Answer
+```text
+Buenos días.
+```
+##### 🤖 AI-generated Answer
+```text
+Buenos días
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Translate &#x27;Good morning&#x27; to Spanish.
+
+---
+
+# Expected Answer:
+Buenos días.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Translate &#x27;Good morning&#x27; to Spanish.
+
+---
+
+# AI-generated Answer:
+Buenos días
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the translation provided is accurate and directly relevant to the input request, with no irrelevant statements present. Excellent job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which provides the exact translation &#x27;Buenos días&#x27; for &#x27;Good morning&#x27;, is perfectly relevant and ranked highest, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;Buenos días&#x27; is perfectly aligned with the AI-generated answer in the retrieval context. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input, providing the exact translation &#x27;Buenos días&#x27; for &#x27;Good morning&#x27; in Spanish. Excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Buenos días&#x27; perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 8</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 8
+
+##### 🧾 Input Prompt
+```text
+What is the square root of 144?
+```
+##### ✅ Expected Answer
+```text
+The square root of 144 is 12.
+```
+##### 🤖 AI-generated Answer
+```text
+12
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the square root of 144?
+
+---
+
+# Expected Answer:
+The square root of 144 is 12.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the square root of 144?
+
+---
+
+# AI-generated Answer:
+12
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the answer provided is perfectly relevant and accurate, directly addressing the question about the square root of 144 without any irrelevant information.
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;12&#x27; as the square root of 144, is the most relevant and is ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the expected output, with node(s) in the retrieval context accurately confirming that the square root of 144 is 12.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 9</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 9
+
+##### 🧾 Input Prompt
+```text
+Who was the first person to walk on the Moon?
+```
+##### ✅ Expected Answer
+```text
+Neil Armstrong was the first person to walk on the Moon.
+```
+##### 🤖 AI-generated Answer
+```text
+Neil Armstrong.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who was the first person to walk on the Moon?
+
+---
+
+# Expected Answer:
+Neil Armstrong was the first person to walk on the Moon.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who was the first person to walk on the Moon?
+
+---
+
+# AI-generated Answer:
+Neil Armstrong.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the question about the first person to walk on the Moon without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Neil Armstrong&#x27; as the answer, is perfectly aligned with the expected output and is ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly supports the statement that Neil Armstrong was the first person to walk on the Moon, as indicated by the 1st node.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context correctly and directly identifies &#x27;Neil Armstrong&#x27; as the first person to walk on the Moon, perfectly matching the input query.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output, &#x27;Neil Armstrong&#x27;, aligns perfectly with the provided context stating that Neil Armstrong was the first person to walk on the Moon, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 10</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 10
+
+##### 🧾 Input Prompt
+```text
+Summarize: &#x27;Artificial intelligence enables machines to perform tasks that require human intelligence.&#x27;
+```
+##### ✅ Expected Answer
+```text
+AI allows machines to mimic human intelligence.
+```
+##### 🤖 AI-generated Answer
+```text
+AI lets machines act intelligently like humans.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Summarize: &#x27;Artificial intelligence enables machines to perform tasks that require human intelligence.&#x27;
+
+---
+
+# Expected Answer:
+AI allows machines to mimic human intelligence.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Summarize: &#x27;Artificial intelligence enables machines to perform tasks that require human intelligence.&#x27;
+
+---
+
+# AI-generated Answer:
+AI lets machines act intelligently like humans.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the summary accurately and concisely captures the essence of the input statement without any irrelevant information. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts is highly relevant and perfectly aligned with the input, providing a succinct and accurate summary.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output perfectly aligns with the information provided in the retrieval context, specifically the 1st node, which states &#x27;Artificial intelligence enables machines to perform tasks that require human intelligence.&#x27; Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 11</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 11
+
+##### 🧾 Input Prompt
+```text
+What year did World War II end?
+```
+##### ✅ Expected Answer
+```text
+World War II ended in 1945.
+```
+##### 🤖 AI-generated Answer
+```text
+1945
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What year did World War II end?
+
+---
+
+# Expected Answer:
+World War II ended in 1945.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What year did World War II end?
+
+---
+
+# AI-generated Answer:
+1945
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the input question without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;1945&#x27; to the question &#x27;What year did World War II end?&#x27;, is the most relevant and is ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, providing the exact year World War II ended.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately states &#x27;World War II ended in 1945.&#x27;, perfectly matching the input query. Excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, indicating no hallucinations or contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 12</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 12
+
+##### 🧾 Input Prompt
+```text
+What is the chemical symbol for water?
+```
+##### ✅ Expected Answer
+```text
+The chemical symbol for water is H₂O.
+```
+##### 🤖 AI-generated Answer
+```text
+H2O
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the chemical symbol for water?
+
+---
+
+# Expected Answer:
+The chemical symbol for water is H₂O.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the chemical symbol for water?
+
+---
+
+# AI-generated Answer:
+H2O
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely provided the chemical symbol for water, with no irrelevant information included. Great job!
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies. Excellent job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;H2O&#x27;, is perfectly relevant and ranked highest, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the expected output, specifically aligning with the chemical symbol for water, H₂O, as stated in the AI-generated answer. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input with the relevant statement &#x27;H2O&#x27;, which is the exact chemical symbol for water.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;H2O&#x27; aligns perfectly with the provided context, with only a minor formatting difference in the subscript.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 13</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 13
+
+##### 🧾 Input Prompt
+```text
+What is the tallest mountain in the world?
+```
+##### ✅ Expected Answer
+```text
+Mount Everest is the tallest mountain in the world.
+```
+##### 🤖 AI-generated Answer
+```text
+Mount Everest.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the tallest mountain in the world?
+
+---
+
+# Expected Answer:
+Mount Everest is the tallest mountain in the world.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the tallest mountain in the world?
+
+---
+
+# AI-generated Answer:
+Mount Everest.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly addresses the query about the tallest mountain in the world without any irrelevant information. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which states &#x27;Mount Everest,&#x27; is directly relevant and correctly answers the question &#x27;What is the tallest mountain in the world?&#x27; There are no irrelevant nodes ranked higher, resulting in perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly supports the statement that Mount Everest is the tallest mountain in the world, as indicated by the 1st node.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately addresses the input by stating &#x27;Mount Everest,&#x27; which is the tallest mountain in the world. Perfect match, excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns perfectly with the provided context without any contradictions or additional fabricated information.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 14</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 14
+
+##### 🧾 Input Prompt
+```text
+Who developed the theory of relativity?
+```
+##### ✅ Expected Answer
+```text
+Albert Einstein developed the theory of relativity.
+```
+##### 🤖 AI-generated Answer
+```text
+Albert Einstein.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who developed the theory of relativity?
+
+---
+
+# Expected Answer:
+Albert Einstein developed the theory of relativity.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who developed the theory of relativity?
+
+---
+
+# AI-generated Answer:
+Albert Einstein.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely identifies Albert Einstein as the developer of the theory of relativity, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts directly and accurately answers the question, stating &#x27;Albert Einstein&#x27; as the developer of the theory of relativity.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly supports the sentence &#x27;Albert Einstein developed the theory of relativity.&#x27; with the 1st node &#x27;Albert Einstein.&#x27; Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context correctly and directly identifies &#x27;Albert Einstein&#x27; as the developer of the theory of relativity, making it perfectly relevant and accurate.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 15</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 15
+
+##### 🧾 Input Prompt
+```text
+Explain photosynthesis in one sentence.
+```
+##### ✅ Expected Answer
+```text
+Photosynthesis is the process by which plants convert sunlight into chemical energy.
+```
+##### 🤖 AI-generated Answer
+```text
+Plants use sunlight to create energy through photosynthesis.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Explain photosynthesis in one sentence.
+
+---
+
+# Expected Answer:
+Photosynthesis is the process by which plants convert sunlight into chemical energy.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Explain photosynthesis in one sentence.
+
+---
+
+# AI-generated Answer:
+Plants use sunlight to create energy through photosynthesis.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response provided a clear, concise, and relevant explanation of photosynthesis without any irrelevant information.
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly addresses the input prompt by stating that &#x27;Plants use sunlight to create energy through photosynthesis,&#x27; is ranked highest and is perfectly relevant.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output aligns perfectly with the information provided in node 1 of the retrieval context.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input, stating &#x27;Plants use sunlight to create energy through photosynthesis.&#x27; This is a clear, concise, and relevant explanation of photosynthesis. Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 16</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 16
+
+##### 🧾 Input Prompt
+```text
+What is the boiling point of water in Celsius?
+```
+##### ✅ Expected Answer
+```text
+Water boils at 100 degrees Celsius.
+```
+##### 🤖 AI-generated Answer
+```text
+100°C
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the boiling point of water in Celsius?
+
+---
+
+# Expected Answer:
+Water boils at 100 degrees Celsius.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the boiling point of water in Celsius?
+
+---
+
+# AI-generated Answer:
+100°C
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the input question without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the information that &#x27;100°C&#x27; is the boiling point of water, is ranked highest, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly supports the statement &#x27;Water boils at 100 degrees Celsius.&#x27; with a direct mention of &#x27;100°C&#x27;. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the relevant information: &#x27;The boiling point of water in Celsius is 100°C.&#x27; Perfect match, great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 17</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 17
+
+##### 🧾 Input Prompt
+```text
+Who is the CEO of Tesla as of 2025?
+```
+##### ✅ Expected Answer
+```text
+Elon Musk is the CEO of Tesla as of 2025.
+```
+##### 🤖 AI-generated Answer
+```text
+Elon Musk.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who is the CEO of Tesla as of 2025?
+
+---
+
+# Expected Answer:
+Elon Musk is the CEO of Tesla as of 2025.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who is the CEO of Tesla as of 2025?
+
+---
+
+# AI-generated Answer:
+Elon Musk.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response provided is directly relevant and accurate to the question asked, with no irrelevant information included. Excellent job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly states that &#x27;Elon Musk is the CEO of Tesla as of 2025,&#x27; is perfectly relevant and aligns with the expected output, resulting in a flawless contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output is fully supported by the retrieval context, specifically the 1st node confirming Elon Musk&#x27;s position as CEO of Tesla in 2025.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns with the provided context without any contradictions or additional fabricated details.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 18</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 18
+
+##### 🧾 Input Prompt
+```text
+Which continent is Australia located on?
+```
+##### ✅ Expected Answer
+```text
+Australia is located on the continent of Australia.
+```
+##### 🤖 AI-generated Answer
+```text
+Australia
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Which continent is Australia located on?
+
+---
+
+# Expected Answer:
+Australia is located on the continent of Australia.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Which continent is Australia located on?
+
+---
+
+# AI-generated Answer:
+Australia
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the output &#x27;Australia&#x27; does not address the question about the continent on which Australia is located, making it completely irrelevant.
+
+##### ContextualPrecision
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the first node in retrieval contexts, which states &#x27;The retrieval context only provides the name \&quot;Australia\&quot; without specifying that it is both a country and a continent, hence it is not sufficiently informative to determine the expected output.&#x27;, is irrelevant and should be ranked lower.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, providing a clear and accurate response to the query.
+
+##### ContextualRelevancy
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the context only mentions &#x27;Australia&#x27; without providing any relevant information about the continent it is located on.
+
+##### Hallucination
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output &#x27;Australia&#x27; contradicts the expected context which requires stating that &#x27;Australia is located on the continent of Australia.&#x27; This incomplete and inaccurate response leads to a high hallucination score.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 19</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 19
+
+##### 🧾 Input Prompt
+```text
+What is the main ingredient in guacamole?
+```
+##### ✅ Expected Answer
+```text
+The main ingredient in guacamole is avocado.
+```
+##### 🤖 AI-generated Answer
+```text
+Avocado.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the main ingredient in guacamole?
+
+---
+
+# Expected Answer:
+The main ingredient in guacamole is avocado.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the main ingredient in guacamole?
+
+---
+
+# AI-generated Answer:
+Avocado.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely identifies avocado as the main ingredient in guacamole, with no irrelevant information included. Excellent job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Avocado&#x27; as the main ingredient in guacamole, perfectly matches the expected output, ensuring top relevance and ranking.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly supports the statement that the main ingredient in guacamole is avocado, as indicated by node(s) in retrieval context mentioning &#x27;Avocado.&#x27; Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 20</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 20
+
+##### 🧾 Input Prompt
+```text
+Translate &#x27;I love programming&#x27; to French.
+```
+##### ✅ Expected Answer
+```text
+J&#x27;aime programmer.
+```
+##### 🤖 AI-generated Answer
+```text
+J’aime programmer
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Translate &#x27;I love programming&#x27; to French.
+
+---
+
+# Expected Answer:
+J&#x27;aime programmer.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Translate &#x27;I love programming&#x27; to French.
+
+---
+
+# AI-generated Answer:
+J’aime programmer
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the translation provided is accurate and directly relevant to the input request, with no irrelevant statements present. Great job!
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output is perfectly aligned with the retrieval context, showing no contradictions or discrepancies.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which provides the exact translation &#x27;J’aime programmer&#x27;, is perfectly relevant and ranked highest, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;J&#x27;aime programmer&#x27; is perfectly aligned with the node in the retrieval context, showcasing a flawless match.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input with the exact translation request and provides the correct French translation &#x27;J’aime programmer&#x27;. Excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;J’aime programmer&#x27; aligns perfectly with the provided context, with no contradictions noted.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 21</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 21
+
+##### 🧾 Input Prompt
+```text
+What gas do humans exhale during respiration?
+```
+##### ✅ Expected Answer
+```text
+Humans exhale carbon dioxide during respiration.
+```
+##### 🤖 AI-generated Answer
+```text
+Carbon dioxide.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What gas do humans exhale during respiration?
+
+---
+
+# Expected Answer:
+Humans exhale carbon dioxide during respiration.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What gas do humans exhale during respiration?
+
+---
+
+# AI-generated Answer:
+Carbon dioxide.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the question about the gas humans exhale during respiration, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly answers the question by stating &#x27;Carbon dioxide,&#x27; is ranked highest, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, confirming that humans exhale carbon dioxide during respiration.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input, stating &#x27;Carbon dioxide,&#x27; which is exactly the gas humans exhale during respiration. Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Carbon dioxide&#x27; aligns perfectly with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 22</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 22
+
+##### 🧾 Input Prompt
+```text
+Name a primary color.
+```
+##### ✅ Expected Answer
+```text
+Red, blue, or yellow are primary colors.
+```
+##### 🤖 AI-generated Answer
+```text
+Red.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Name a primary color.
+
+---
+
+# Expected Answer:
+Red, blue, or yellow are primary colors.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Name a primary color.
+
+---
+
+# AI-generated Answer:
+Red.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the input by naming a primary color, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which provides the primary color &#x27;Red&#x27;, is directly relevant and appropriately ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, confirming that red, blue, or yellow are indeed primary colors. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input by providing &#x27;Red.&#x27; as a primary color, demonstrating complete relevance and accuracy.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns perfectly with the context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 23</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 23
+
+##### 🧾 Input Prompt
+```text
+What is 10 multiplied by 12?
+```
+##### ✅ Expected Answer
+```text
+120
+```
+##### 🤖 AI-generated Answer
+```text
+120
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is 10 multiplied by 12?
+
+---
+
+# Expected Answer:
+120
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is 10 multiplied by 12?
+
+---
+
+# AI-generated Answer:
+120
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly provided the correct product of 10 and 12 without any irrelevant information. Excellent job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;120&#x27;, is perfectly relevant and correctly ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output &#x27;120&#x27; is perfectly supported by the retrieval context, which confirms the result of multiplying 10 by 12.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly provides the correct answer &#x27;120&#x27; to the question &#x27;What is 10 multiplied by 12?&#x27;, showing perfect alignment and relevance.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;120&#x27; perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 24</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 24
+
+##### 🧾 Input Prompt
+```text
+What programming language is primarily used for data science?
+```
+##### ✅ Expected Answer
+```text
+Python is primarily used for data science.
+```
+##### 🤖 AI-generated Answer
+```text
+Python.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What programming language is primarily used for data science?
+
+---
+
+# Expected Answer:
+Python is primarily used for data science.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What programming language is primarily used for data science?
+
+---
+
+# AI-generated Answer:
+Python.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the question about the primary programming language used for data science, with no irrelevant information included. Excellent job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which states &#x27;Python&#x27;, is directly relevant and correctly ranked as the top result for the question about the primary programming language used for data science.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, confirming that Python is indeed primarily used for data science as per the 1st node.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately addresses the input by stating &#x27;Python,&#x27; which is the primary programming language used for data science. No irrelevant information is present, making the context perfectly aligned with the query.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Python&#x27; aligns with the context stating that Python is primarily used for data science, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 25</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 25
+
+##### 🧾 Input Prompt
+```text
+Who invented the telephone?
+```
+##### ✅ Expected Answer
+```text
+Alexander Graham Bell invented the telephone.
+```
+##### 🤖 AI-generated Answer
+```text
+Alexander Graham Bell.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who invented the telephone?
+
+---
+
+# Expected Answer:
+Alexander Graham Bell invented the telephone.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who invented the telephone?
+
+---
+
+# AI-generated Answer:
+Alexander Graham Bell.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the question about the inventor of the telephone without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly states &#x27;Alexander Graham Bell&#x27; as the inventor of the telephone, is highly relevant and correctly ranked at the top.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly supports the statement that Alexander Graham Bell invented the telephone, as indicated by the 1st node.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the relevant information: &#x27;Alexander Graham Bell.&#x27; Perfect match, great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 26</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 26
+
+##### 🧾 Input Prompt
+```text
+What is the freezing point of water in Fahrenheit?
+```
+##### ✅ Expected Answer
+```text
+The freezing point of water is 32°F.
+```
+##### 🤖 AI-generated Answer
+```text
+32°F
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the freezing point of water in Fahrenheit?
+
+---
+
+# Expected Answer:
+The freezing point of water is 32°F.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the freezing point of water in Fahrenheit?
+
+---
+
+# AI-generated Answer:
+32°F
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the input question without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;32°F&#x27;, is perfectly relevant and ranked highest, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, providing the exact freezing point of water as 32°F in the 1st node.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the freezing point of water in Fahrenheit as &#x27;32°F&#x27;, perfectly matching the input query. Excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context without any contradictions.
+
+##### Summarization
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the summary perfectly captures the essence of the original text without any contradictions or omissions, demonstrating an excellent summarization task.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 27</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 27
+
+##### 🧾 Input Prompt
+```text
+Who wrote the play &#x27;Romeo and Juliet&#x27;?
+```
+##### ✅ Expected Answer
+```text
+William Shakespeare wrote &#x27;Romeo and Juliet&#x27;.
+```
+##### 🤖 AI-generated Answer
+```text
+William Shakespeare.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who wrote the play &#x27;Romeo and Juliet&#x27;?
+
+---
+
+# Expected Answer:
+William Shakespeare wrote &#x27;Romeo and Juliet&#x27;.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who wrote the play &#x27;Romeo and Juliet&#x27;?
+
+---
+
+# AI-generated Answer:
+William Shakespeare.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and directly identifies William Shakespeare as the author of &#x27;Romeo and Juliet&#x27;, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly answers the question by stating &#x27;William Shakespeare wrote &#x27;Romeo and Juliet&#x27;.&#x27;, is ranked highest, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, confirming that William Shakespeare wrote &#x27;Romeo and Juliet&#x27; as indicated by node 1.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately states &#x27;William Shakespeare wrote the play &#x27;Romeo and Juliet&#x27;.&#x27; This perfect alignment with the input query demonstrates complete contextual relevancy.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns with the provided context without any contradictions or additional fabricated details.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 28</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 28
+
+##### 🧾 Input Prompt
+```text
+Summarize: &#x27;The mitochondria are the powerhouses of the cell.&#x27;
+```
+##### ✅ Expected Answer
+```text
+Mitochondria generate energy for cells.
+```
+##### 🤖 AI-generated Answer
+```text
+They produce energy for the cell.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Summarize: &#x27;The mitochondria are the powerhouses of the cell.&#x27;
+
+---
+
+# Expected Answer:
+Mitochondria generate energy for cells.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Summarize: &#x27;The mitochondria are the powerhouses of the cell.&#x27;
+
+---
+
+# AI-generated Answer:
+They produce energy for the cell.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the summary perfectly captures the essence of the input statement without any irrelevant information. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which is relevant and states &#x27;They produce energy for the cell,&#x27; is perfectly aligned with the input and is ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output aligns perfectly with the information provided in the 1st node of the retrieval context, which confirms that mitochondria generate energy for cells.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns perfectly with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 29</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 29
+
+##### 🧾 Input Prompt
+```text
+What is the opposite of &#x27;hot&#x27;?
+```
+##### ✅ Expected Answer
+```text
+The opposite of &#x27;hot&#x27; is &#x27;cold&#x27;.
+```
+##### 🤖 AI-generated Answer
+```text
+Cold.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the opposite of &#x27;hot&#x27;?
+
+---
+
+# Expected Answer:
+The opposite of &#x27;hot&#x27; is &#x27;cold&#x27;.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the opposite of &#x27;hot&#x27;?
+
+---
+
+# AI-generated Answer:
+Cold.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the question without any irrelevant information. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Cold&#x27; as the opposite of &#x27;hot&#x27;, is directly relevant and correctly ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output aligns perfectly with the information from the 1st node in the retrieval context, stating &#x27;Cold&#x27; as the opposite of &#x27;hot&#x27;. Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Cold.&#x27; perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 30</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 30
+
+##### 🧾 Input Prompt
+```text
+Translate &#x27;Thank you very much&#x27; to German.
+```
+##### ✅ Expected Answer
+```text
+Vielen Dank.
+```
+##### 🤖 AI-generated Answer
+```text
+Danke schön.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Translate &#x27;Thank you very much&#x27; to German.
+
+---
+
+# Expected Answer:
+Vielen Dank.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Translate &#x27;Thank you very much&#x27; to German.
+
+---
+
+# AI-generated Answer:
+Danke schön.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the translation provided is accurate and directly relevant to the input request, with no irrelevant statements present. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which provides a translation of &#x27;Thank you very much&#x27; to German, is highly relevant and ranked appropriately.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the translation &#x27;Vielen Dank&#x27; perfectly aligns with the context of translating &#x27;Thank you very much&#x27; to German, and there are no unsupportive elements.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Danke schön&#x27; is a valid and accurate translation of &#x27;Thank you very much&#x27; to German, aligning well with the context despite a different expected answer.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 31</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 31
+
+##### 🧾 Input Prompt
+```text
+What planet is known as the Red Planet?
+```
+##### ✅ Expected Answer
+```text
+Mars is known as the Red Planet.
+```
+##### 🤖 AI-generated Answer
+```text
+Mars.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What planet is known as the Red Planet?
+
+---
+
+# Expected Answer:
+Mars is known as the Red Planet.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What planet is known as the Red Planet?
+
+---
+
+# AI-generated Answer:
+Mars.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely identified Mars as the Red Planet, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which states &#x27;Mars&#x27; as the Red Planet, is perfectly relevant and ranked highest, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;Mars is known as the Red Planet.&#x27; is perfectly supported by the 1st node in the retrieval context, which mentions &#x27;Mars.&#x27; Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the relevant information, stating &#x27;Mars,&#x27; which is the correct answer to the question about the Red Planet. Perfect match, excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Mars&#x27; aligns perfectly with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 32</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 32
+
+##### 🧾 Input Prompt
+```text
+Who was the first President of the United States?
+```
+##### ✅ Expected Answer
+```text
+George Washington was the first President of the United States.
+```
+##### 🤖 AI-generated Answer
+```text
+George Washington.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who was the first President of the United States?
+
+---
+
+# Expected Answer:
+George Washington was the first President of the United States.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who was the first President of the United States?
+
+---
+
+# AI-generated Answer:
+George Washington.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly addresses the question about the first President of the United States without any irrelevant information. Excellent job!
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;George Washington&#x27;, is the most relevant and is ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output is perfectly supported by the 1st node in the retrieval context, which confirms George Washington as the first President of the United States. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the relevant statement &#x27;George Washington.&#x27; as the answer to the input question &#x27;Who was the first President of the United States?&#x27;. Perfect match, excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 33</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 33
+
+##### 🧾 Input Prompt
+```text
+What is the speed of light in vacuum (approximate value)?
+```
+##### ✅ Expected Answer
+```text
+The speed of light is approximately 299,792 kilometers per second.
+```
+##### 🤖 AI-generated Answer
+```text
+About 300,000 km/s.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the speed of light in vacuum (approximate value)?
+
+---
+
+# Expected Answer:
+The speed of light is approximately 299,792 kilometers per second.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the speed of light in vacuum (approximate value)?
+
+---
+
+# AI-generated Answer:
+About 300,000 km/s.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response provided the exact and relevant information about the speed of light in a vacuum without any irrelevant statements.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which provides the approximate value for the speed of light in a vacuum, is directly relevant and perfectly aligned with the input question, ensuring optimal relevance and ranking.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output is perfectly supported by the 1st node in the retrieval context, which confirms the speed of light as about 300,000 km/s. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the relevant information: &#x27;About 300,000 km/s.&#x27; Perfect match, great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output is a reasonable approximation that aligns with the provided context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 34</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 34
+
+##### 🧾 Input Prompt
+```text
+Explain Newton’s first law of motion.
+```
+##### ✅ Expected Answer
+```text
+An object remains at rest or in uniform motion unless acted upon by an external force.
+```
+##### 🤖 AI-generated Answer
+```text
+Objects stay still or keep moving unless a force changes that.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Explain Newton’s first law of motion.
+
+---
+
+# Expected Answer:
+An object remains at rest or in uniform motion unless acted upon by an external force.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Explain Newton’s first law of motion.
+
+---
+
+# AI-generated Answer:
+Objects stay still or keep moving unless a force changes that.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the explanation provided is completely relevant and accurately addresses Newton&#x27;s first law of motion without any irrelevant information. Excellent job!
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first and only node in the retrieval contexts is highly relevant and directly explains Newton’s first law of motion, as indicated by &#x27;Objects stay still or keep moving unless a force changes that,&#x27; which perfectly aligns with the expected output.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output aligns perfectly with the information provided in the retrieval context, specifically the AI-generated answer, which states &#x27;Objects stay still or keep moving unless a force changes that...&#x27;. Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 35</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 35
+
+##### 🧾 Input Prompt
+```text
+What is 25% of 200?
+```
+##### ✅ Expected Answer
+```text
+25% of 200 is 50.
+```
+##### 🤖 AI-generated Answer
+```text
+50
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is 25% of 200?
+
+---
+
+# Expected Answer:
+25% of 200 is 50.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is 25% of 200?
+
+---
+
+# AI-generated Answer:
+50
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly provided the correct calculation of 25% of 200 without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;The context directly provides the answer to the input question, stating &#x27;# AI-generated Answer: 50&#x27;, which matches the expected output &#x27;25% of 200 is 50.&#x27;, is perfectly relevant and ranked highest, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output perfectly aligns with the AI-generated answer in the retrieval context, showcasing a flawless match!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context, containing the relevant statement &#x27;50&#x27;, directly provides the correct answer to the input question &#x27;What is 25% of 200?&#x27;, demonstrating perfect contextual relevancy. Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, showing no contradictions or inaccuracies.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 36</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 36
+
+##### 🧾 Input Prompt
+```text
+What does HTTP stand for?
+```
+##### ✅ Expected Answer
+```text
+HTTP stands for HyperText Transfer Protocol.
+```
+##### 🤖 AI-generated Answer
+```text
+HyperText Transfer Protocol.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What does HTTP stand for?
+
+---
+
+# Expected Answer:
+HTTP stands for HyperText Transfer Protocol.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What does HTTP stand for?
+
+---
+
+# AI-generated Answer:
+HyperText Transfer Protocol.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly addresses the question about what HTTP stands for, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;HyperText Transfer Protocol,&#x27; is ranked highest, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, providing a clear and accurate definition of HTTP as HyperText Transfer Protocol.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the meaning of HTTP as &#x27;HyperText Transfer Protocol&#x27;, making it perfectly relevant and comprehensive.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;HyperText Transfer Protocol&#x27; perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 37</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 37
+
+##### 🧾 Input Prompt
+```text
+Who painted The Starry Night?
+```
+##### ✅ Expected Answer
+```text
+Vincent van Gogh painted The Starry Night.
+```
+##### 🤖 AI-generated Answer
+```text
+Vincent van Gogh.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who painted The Starry Night?
+
+---
+
+# Expected Answer:
+Vincent van Gogh painted The Starry Night.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who painted The Starry Night?
+
+---
+
+# AI-generated Answer:
+Vincent van Gogh.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely identified Vincent van Gogh as the painter of The Starry Night, with no irrelevant information included. Great job!
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showcasing excellent faithfulness and accuracy.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly answers the question by stating &#x27;Vincent van Gogh,&#x27; is ranked highest, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;Vincent van Gogh painted The Starry Night.&#x27; is perfectly supported by the 1st node in the retrieval context.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly states &#x27;Vincent van Gogh painted The Starry Night.&#x27;, perfectly matching the input query. Excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 38</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 38
+
+##### 🧾 Input Prompt
+```text
+What is the main function of the heart?
+```
+##### ✅ Expected Answer
+```text
+The heart pumps blood throughout the body.
+```
+##### 🤖 AI-generated Answer
+```text
+It pumps blood around the body.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the main function of the heart?
+
+---
+
+# Expected Answer:
+The heart pumps blood throughout the body.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the main function of the heart?
+
+---
+
+# AI-generated Answer:
+It pumps blood around the body.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly addresses the main function of the heart without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because all relevant nodes, like the first node which states &#x27;It pumps blood around the body,&#x27; are ranked higher with no irrelevant nodes present. Perfect alignment!
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, specifically node 1 stating &#x27;It pumps blood around the body.&#x27; Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, with no contradictions present.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 39</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 39
+
+##### 🧾 Input Prompt
+```text
+What is 9 squared?
+```
+##### ✅ Expected Answer
+```text
+81
+```
+##### 🤖 AI-generated Answer
+```text
+81
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is 9 squared?
+
+---
+
+# Expected Answer:
+81
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is 9 squared?
+
+---
+
+# AI-generated Answer:
+81
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately provided the result of 9 squared, with no irrelevant information included. Excellent job!
+
+##### Faithfulness
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output incorrectly claims &#x27;The number provided is 81,&#x27; while the context only confirms that 9 squared equals 81, not that 81 was the number provided.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer &#x27;81&#x27; to the question &#x27;What is 9 squared?&#x27;, is perfectly relevant and ranked highest. No irrelevant nodes are present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the expected output &#x27;81&#x27; is perfectly aligned with the AI-generated answer in the retrieval context, which also states &#x27;81&#x27;. Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input, providing the exact answer &#x27;81&#x27; for 9 squared. Excellent job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;81&#x27; perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 40</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 40
+
+##### 🧾 Input Prompt
+```text
+Translate &#x27;How are you?&#x27; to Japanese.
+```
+##### ✅ Expected Answer
+```text
+お元気ですか？ (Ogenki desu ka?)
+```
+##### 🤖 AI-generated Answer
+```text
+Ogenki desu ka?
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Translate &#x27;How are you?&#x27; to Japanese.
+
+---
+
+# Expected Answer:
+お元気ですか？ (Ogenki desu ka?)
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Translate &#x27;How are you?&#x27; to Japanese.
+
+---
+
+# AI-generated Answer:
+Ogenki desu ka?
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the translation provided is accurate and directly relevant to the input request with no irrelevant statements.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which provides the translation &#x27;Ogenki desu ka?&#x27;, is directly relevant and useful for the input, with no irrelevant nodes present.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;お元気ですか？ (Ogenki desu ka?)&#x27; is perfectly matched in the 1st node of the retrieval context.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input with the translation &#x27;Ogenki desu ka?&#x27; for &#x27;How are you?&#x27; in Japanese, demonstrating complete relevance and accuracy.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Ogenki desu ka?&#x27; perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 41</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 41
+
+##### 🧾 Input Prompt
+```text
+What is the smallest prime number?
+```
+##### ✅ Expected Answer
+```text
+The smallest prime number is 2.
+```
+##### 🤖 AI-generated Answer
+```text
+2
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the smallest prime number?
+
+---
+
+# Expected Answer:
+The smallest prime number is 2.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the smallest prime number?
+
+---
+
+# AI-generated Answer:
+2
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response correctly and concisely identified 2 as the smallest prime number without any irrelevant information.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;2&#x27; perfectly aligns with the provided context stating that the smallest prime number is 2, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 42</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 42
+
+##### 🧾 Input Prompt
+```text
+Who is known as the Father of Computers?
+```
+##### ✅ Expected Answer
+```text
+Charles Babbage is known as the Father of Computers.
+```
+##### 🤖 AI-generated Answer
+```text
+Charles Babbage.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who is known as the Father of Computers?
+
+---
+
+# Expected Answer:
+Charles Babbage is known as the Father of Computers.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who is known as the Father of Computers?
+
+---
+
+# AI-generated Answer:
+Charles Babbage.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately identifies Charles Babbage as the Father of Computers without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which directly states &#x27;Charles Babbage&#x27; as the Father of Computers, is perfectly relevant and ranked highest.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;Charles Babbage is known as the Father of Computers.&#x27; is perfectly supported by the 1st node in the retrieval context, making it a flawless match!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately identifies &#x27;Charles Babbage&#x27; as the Father of Computers, making it perfectly relevant and comprehensive.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 43</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 43
+
+##### 🧾 Input Prompt
+```text
+Summarize the plot of &#x27;The Lion King&#x27; in one sentence.
+```
+##### ✅ Expected Answer
+```text
+A young lion named Simba overcomes adversity to reclaim his rightful place as king.
+```
+##### 🤖 AI-generated Answer
+```text
+Simba learns to be king after his father&#x27;s death.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Summarize the plot of &#x27;The Lion King&#x27; in one sentence.
+
+---
+
+# Expected Answer:
+A young lion named Simba overcomes adversity to reclaim his rightful place as king.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Summarize the plot of &#x27;The Lion King&#x27; in one sentence.
+
+---
+
+# AI-generated Answer:
+Simba learns to be king after his father&#x27;s death.
+```
+### 📊 Evaluation Metrics
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which provides a relevant summary of &#x27;The Lion King&#x27;, is perfectly aligned with the input request. No irrelevant nodes are present, making the ranking ideal.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, specifically mentioning &#x27;Simba&#x27; and his journey to &#x27;be king&#x27;, which directly supports the sentence about Simba overcoming adversity to reclaim his place as king.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the input, as evidenced by the relevant statement: &#x27;Simba learns to be king after his father&#x27;s death.&#x27; This succinctly captures the essence of &#x27;The Lion King&#x27;s&#x27; plot, making it a perfect match.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 44</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 44
+
+##### 🧾 Input Prompt
+```text
+What is the main purpose of DNA?
+```
+##### ✅ Expected Answer
+```text
+DNA stores genetic information used for growth, development, and reproduction.
+```
+##### 🤖 AI-generated Answer
+```text
+It carries genetic information.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the main purpose of DNA?
+
+---
+
+# Expected Answer:
+DNA stores genetic information used for growth, development, and reproduction.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the main purpose of DNA?
+
+---
+
+# AI-generated Answer:
+It carries genetic information.
+```
+### 📊 Evaluation Metrics
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence perfectly aligns with the information provided in the retrieval context, specifically node(s) confirming that DNA carries genetic information used for essential biological processes.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly addresses the main purpose of DNA by stating &#x27;It carries genetic information.&#x27;, which is a precise and relevant answer to the input question.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 45</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 45
+
+##### 🧾 Input Prompt
+```text
+What is the capital city of Japan?
+```
+##### ✅ Expected Answer
+```text
+The capital city of Japan is Tokyo.
+```
+##### 🤖 AI-generated Answer
+```text
+Tokyo.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the capital city of Japan?
+
+---
+
+# Expected Answer:
+The capital city of Japan is Tokyo.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the capital city of Japan?
+
+---
+
+# AI-generated Answer:
+Tokyo.
+```
+### 📊 Evaluation Metrics
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which directly provides the answer to the question by stating &#x27;Tokyo&#x27; as the capital city of Japan, is ranked highest.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the relevant statement &#x27;Tokyo.&#x27; in response to the input query about the capital city of Japan.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 46</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 46
+
+##### 🧾 Input Prompt
+```text
+Who composed the Fifth Symphony?
+```
+##### ✅ Expected Answer
+```text
+Ludwig van Beethoven composed the Fifth Symphony.
+```
+##### 🤖 AI-generated Answer
+```text
+Beethoven.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Who composed the Fifth Symphony?
+
+---
+
+# Expected Answer:
+Ludwig van Beethoven composed the Fifth Symphony.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Who composed the Fifth Symphony?
+
+---
+
+# AI-generated Answer:
+Beethoven.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately identifies Ludwig van Beethoven as the composer of the Fifth Symphony, with no irrelevant information included.
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies. Great job!
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the expected output, confirming that Ludwig van Beethoven composed the Fifth Symphony.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly states &#x27;Beethoven composed the Fifth Symphony,&#x27; which perfectly matches the input query. Great job!
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Beethoven&#x27; aligns with the context, which confirms that Ludwig van Beethoven composed the Fifth Symphony, and there are no contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 47</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 47
+
+##### 🧾 Input Prompt
+```text
+What is the chemical symbol for gold?
+```
+##### ✅ Expected Answer
+```text
+The chemical symbol for gold is Au.
+```
+##### 🤖 AI-generated Answer
+```text
+Au
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the chemical symbol for gold?
+
+---
+
+# Expected Answer:
+The chemical symbol for gold is Au.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the chemical symbol for gold?
+
+---
+
+# AI-generated Answer:
+Au
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately provided the chemical symbol for gold without any irrelevant information. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which directly provides the answer &#x27;Au&#x27; for the chemical symbol of gold, is ranked highest, ensuring perfect contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly supports the expected output, specifically aligning with the AI-generated answer stating &#x27;Au&#x27; for the chemical symbol of gold.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the chemical symbol for gold as &#x27;Au&#x27;, perfectly matching the input query without any irrelevant information.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output &#x27;Au&#x27; perfectly aligns with the provided context stating that the chemical symbol for gold is Au, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 48</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 48
+
+##### 🧾 Input Prompt
+```text
+Which planet has the most moons?
+```
+##### ✅ Expected Answer
+```text
+Saturn has the most moons in our solar system.
+```
+##### 🤖 AI-generated Answer
+```text
+Saturn.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Which planet has the most moons?
+
+---
+
+# Expected Answer:
+Saturn has the most moons in our solar system.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Which planet has the most moons?
+
+---
+
+# AI-generated Answer:
+Saturn.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response directly and accurately addresses the question about which planet has the most moons, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in the retrieval contexts, which states &#x27;Saturn has the most moons in our solar system.&#x27;, is directly relevant and perfectly aligned with the question, ensuring optimal contextual precision.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly aligns with the statement that Saturn has the most moons in our solar system, as indicated by node(s) in retrieval context.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly and accurately provides the relevant information that &#x27;Saturn&#x27; has the most moons, perfectly aligning with the input query.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns with the provided context without any contradictions, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 49</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 49
+
+##### 🧾 Input Prompt
+```text
+What is the opposite of &#x27;increase&#x27;?
+```
+##### ✅ Expected Answer
+```text
+The opposite of &#x27;increase&#x27; is &#x27;decrease&#x27;.
+```
+##### 🤖 AI-generated Answer
+```text
+Decrease.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the opposite of &#x27;increase&#x27;?
+
+---
+
+# Expected Answer:
+The opposite of &#x27;increase&#x27; is &#x27;decrease&#x27;.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the opposite of &#x27;increase&#x27;?
+
+---
+
+# AI-generated Answer:
+Decrease.
+```
+### 📊 Evaluation Metrics
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because all relevant nodes, such as the first node which states &#x27;Decrease&#x27; as the opposite of &#x27;increase&#x27;, are ranked higher than any irrelevant nodes.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;The opposite of &#x27;increase&#x27; is &#x27;decrease&#x27;.&#x27; is perfectly supported by the 1st node in the retrieval context, which is &#x27;Decrease.&#x27; Great job!
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context directly provides the relevant statement &#x27;Decrease.&#x27; which is the exact opposite of &#x27;increase&#x27;, making it perfectly aligned with the input query.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns perfectly with the provided context without any contradictions.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 50</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 50
+
+##### 🧾 Input Prompt
+```text
+Explain what machine learning is.
+```
+##### ✅ Expected Answer
+```text
+Machine learning is a branch of AI where computers learn patterns from data to make predictions or decisions.
+```
+##### 🤖 AI-generated Answer
+```text
+It’s when computers learn from data to make predictions.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+Explain what machine learning is.
+
+---
+
+# Expected Answer:
+Machine learning is a branch of AI where computers learn patterns from data to make predictions or decisions.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+Explain what machine learning is.
+
+---
+
+# AI-generated Answer:
+It’s when computers learn from data to make predictions.
+```
+### 📊 Evaluation Metrics
+
+##### Faithfulness
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the actual output perfectly aligns with the retrieval context, showing no contradictions or discrepancies. Great job!
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 51</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 51
+
+##### 🧾 Input Prompt
+```text
+What language is primarily spoken in Brazil?
+```
+##### ✅ Expected Answer
+```text
+Portuguese is the primary language spoken in Brazil.
+```
+##### 🤖 AI-generated Answer
+```text
+Portuguese.
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What language is primarily spoken in Brazil?
+
+---
+
+# Expected Answer:
+Portuguese is the primary language spoken in Brazil.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What language is primarily spoken in Brazil?
+
+---
+
+# AI-generated Answer:
+Portuguese.
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly addresses the question about the primary language spoken in Brazil without any irrelevant information.
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which states &#x27;Portuguese,&#x27; is directly relevant and correctly ranked highest, perfectly aligning with the expected output that &#x27;Portuguese is the primary language spoken in Brazil.&#x27;
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output perfectly aligns with the provided context, indicating no hallucinations.
+
+</script></article>
+</details>
+
+<details>
+  <summary>🧪 <b>Test Case 52</b></summary>
+  <article><script type="text/plain" class="md-src">### 🧪 Test Case 52
+
+##### 🧾 Input Prompt
+```text
+What is the value of pi (approximate)?
+```
+##### ✅ Expected Answer
+```text
+Pi is approximately 3.14159.
+```
+##### 🤖 AI-generated Answer
+```text
+3.14
+```
+##### 📘 Source of Truth
+```text
+# Input Prompt:
+What is the value of pi (approximate)?
+
+---
+
+# Expected Answer:
+Pi is approximately 3.14159.
+```
+##### 🔍 AI-inferred Truth
+```text
+# Input Prompt:
+What is the value of pi (approximate)?
+
+---
+
+# AI-generated Answer:
+3.14
+```
+### 📊 Evaluation Metrics
+
+##### AnswerRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the response accurately and directly provided the approximate value of pi, with no irrelevant information included. Great job!
+
+##### ContextualPrecision
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the first node in retrieval contexts, which provides an approximate value for pi, is highly relevant and correctly ranked at the top.
+
+##### ContextualRecall
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the sentence &#x27;Pi is approximately 3.14159.&#x27; is fully supported by the retrieval context, which provides the approximate value of pi as &#x27;3.14&#x27;, aligning perfectly with the expected output.
+
+##### ContextualRelevancy
+- **Score:** 1.00
+- **Reason:** The score is 1.00 because the retrieval context perfectly matches the input with the relevant statement &#x27;3.14&#x27;, providing the approximate value of pi without any irrelevant information.
+
+##### Hallucination
+- **Score:** 0.00
+- **Reason:** The score is 0.00 because the actual output aligns well with the provided context, showing only a minor, acceptable level of imprecision in the approximation of pi.
+
+</script></article>
+</details>
+
+  </div>
+</details>
+
+</main>
+
+<script>
+// Render Markdown from <script type="text/plain"> blocks
+document.querySelectorAll('article').forEach(article => {
+  const src = article.querySelector('.md-src');
+  if (!src) return;
+  const raw = src.textContent;
+  const rendered = marked.parse(raw);
+  article.innerHTML = rendered;
+  article.querySelectorAll('pre code').forEach(block => hljs.highlightElement(block));
+});
+</script>
+
+</body>
+</html>

@@ -1,3 +1,9 @@
+# Skip Virtual Environments
+**/*-venv/
+
+# Skip DeepEval generated files
+.deepeval/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

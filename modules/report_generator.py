@@ -2,6 +2,8 @@ import os
 import pandas as pd
 import altair as alt
 
+from modules.html_generator import generate_standalone_index_html
+
 def generate_test_report(test_results, test_metrics, output_dir="reports"):
     os.makedirs(output_dir, exist_ok=True)
 
@@ -17,20 +19,20 @@ def generate_test_report(test_results, test_metrics, output_dir="reports"):
         # === Individual Report ===
         case_filename = os.path.join(output_dir, f"test_case_{idx}.md")
         with open(case_filename, "w", encoding="utf-8") as f:
-            f.write(f"# 🧪 Test Case {idx}\n\n")
-            f.write(f"### 🧾 Input Prompt\n```text\n{r['input_prompt']}\n```\n")
-            f.write(f"### ✅ Expected Answer\n```text\n{r['expected_answer']}\n```\n")
-            f.write(f"### 🤖 AI-generated Answer\n```text\n{r['ai_generated_answer']}\n```\n")
-            f.write(f"### 📘 Source of Truth\n```text\n{r['source_of_truth']}\n```\n")
-            f.write(f"### 🔍 AI-inferred Truth\n```text\n{r['ai_inferred_truth']}\n```\n")
+            f.write(f"### 🧪 Test Case {idx}\n\n")
+            f.write(f"##### 🧾 Input Prompt\n```text\n{r['input_prompt']}\n```\n")
+            f.write(f"##### ✅ Expected Answer\n```text\n{r['expected_answer']}\n```\n")
+            f.write(f"##### 🤖 AI-generated Answer\n```text\n{r['ai_generated_answer']}\n```\n")
+            f.write(f"##### 📘 Source of Truth\n```text\n{r['source_of_truth']}\n```\n")
+            f.write(f"##### 🔍 AI-inferred Truth\n```text\n{r['ai_inferred_truth']}\n```\n")
 
-            f.write("## 📊 Evaluation Metrics\n\n")
+            f.write("### 📊 Evaluation Metrics\n\n")
             for m in r["metrics"]:
                 metric_name = m["metric"]
                 score = m["score"]
                 reason = m["reason"]
 
-                f.write(f"### {metric_name}\n")
+                f.write(f"##### {metric_name}\n")
                 f.write(f"- **Score:** {score:.2f}\n")
                 f.write(f"- **Reason:** {reason}\n\n")
 
@@ -75,7 +77,10 @@ def generate_test_report(test_results, test_metrics, output_dir="reports"):
         html_file = os.path.join(output_dir, "aggregated_metrics.html")
         chart.save(html_file)
         print(f"✅ Generated aggregated box plot: {html_file}")
+
+        generate_standalone_index_html(test_results, output_dir)
     else:
         print("⚠️ No metrics found to plot.")
 
     print("\n=== All reports generated successfully! ===")
+
