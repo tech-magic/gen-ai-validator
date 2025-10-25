@@ -84,6 +84,12 @@ flowchart TD
 
 ---
 
+## 📸 Demo
+
+![Demo](demo/demo.gif)
+
+---
+
 ## 📦 Installation Guide
 
 #### 🖥️ Test Environment
