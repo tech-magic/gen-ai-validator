@@ -90,6 +90,15 @@ flowchart TD
 
 ---
 
+## ⚙️ Tech Stack
+
+- [Python3](https://www.python.org/) – Core implementation language  
+- [DeepEval](https://github.com/confident-ai/deepeval/) – Framework for extensible GenAI test metrics and customizable Judge LLM integration  
+- [AWS Bedrock (Optional)](https://aws.amazon.com/bedrock/) – Used with **Amazon Nova Pro** as the `Judge LLM` (for this demo)
+- [Vega (with altair)](https://altair-viz.github.io/) – Visualization library for analyzing and illustrating GenAI testing metrics
+
+---
+
 ## 📦 Installation Guide
 
 #### 🖥️ Test Environment
